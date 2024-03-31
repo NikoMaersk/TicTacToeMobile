@@ -94,6 +94,10 @@ namespace TicTacToeMobile
 			await currentButton.ScaleTo(0.95, 100, Easing.BounceIn);
 			await currentButton.ScaleTo(1.00, 100, Easing.BounceOut);
 			Game.NewGame();
+
+			ButtonGrid.Children.Clear();
+
+			InitializeButtons();
 		}
 
 		private void RestartGame()
