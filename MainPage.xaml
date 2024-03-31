@@ -10,7 +10,7 @@
             <RowDefinition Height="8*"/>
             <RowDefinition Height="3*" />
         </Grid.RowDefinitions>
-        <Grid x:Name="HeaderGrid" Grid.Row="0">
+        <Grid x:Name="HeaderGrid" Grid.Row="0" Margin="0" Padding="60,0,60,0" RowSpacing="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -19,18 +19,18 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <Frame Grid.Row="0" Grid.Column="0" Style="{StaticResource HeaderFrameStyle}">
+            <Border x:Name="PlayerOneBorder" Grid.Row="0" Grid.Column="0" Style="{StaticResource HeaderBorderStyle}">
                 <StackLayout Style="{StaticResource HeaderStackLayoutStyle}">
                     <Label x:Name="PlayerOneLabel" Text="Player X" Style="{StaticResource HeaderLabelStyle}"/>
                     <Label x:Name="PlayerOneScoreLabel" Text="{Binding PlayerXScore}"  Style="{StaticResource HeaderLabelStyle}" />
                 </StackLayout>
-            </Frame>
-            <Frame Grid.Row="0" Grid.Column="1" Style="{StaticResource HeaderFrameStyle}">
+            </Border>
+            <Border x:Name="PlayerTwoBorder" Grid.Row="0" Grid.Column="1" Style="{StaticResource HeaderBorderStyle}">
                 <StackLayout Style="{StaticResource HeaderStackLayoutStyle}">
                     <Label x:Name="PlayerTwoLabel" Text="Player O" Style="{StaticResource HeaderLabelStyle}" />
                     <Label x:Name="PlayerTwoScoreLabel" Text="{Binding PlayerYScore}" Style="{StaticResource HeaderLabelStyle}" />
                 </StackLayout>
-            </Frame>
+            </Border>
         </Grid>
         <Frame Grid.Row="1" CornerRadius="10" BackgroundColor="Transparent" BorderColor="Transparent" HasShadow="False" Margin="5" Padding="1">
             <Grid x:Name="ButtonGrid" Style="{StaticResource MainGridStyle}">

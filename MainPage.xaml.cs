@@ -39,6 +39,10 @@ namespace TicTacToeMobile
 				Grid.SetRow(button, col);
 				ButtonGrid.Children.Add(button);
 			}
+
+			PlayerOneBorder.Stroke = Color.FromArgb("#FF0000");
+			PlayerOneBorder.StrokeThickness = 4;
+			PlayerTwoBorder.Stroke = Color.FromArgb("#FFFFFF");
 		}
 
 
@@ -74,6 +78,23 @@ namespace TicTacToeMobile
 				else if (currentButton.Text == "O")
 				{
 					currentButton.TextColor = Color.FromArgb("#FFFFFF");
+				}
+
+				if (Game.CurrentPlayer == Game.PlayerEnum.PlayerX)
+				{
+					PlayerOneBorder.Stroke = Color.FromArgb("#FF0000");
+					PlayerOneBorder.StrokeThickness = 4;
+
+					PlayerTwoBorder.Stroke = Color.FromArgb("#FFFFFF");
+					PlayerTwoBorder.StrokeThickness = 1;
+				}
+				else
+				{
+					PlayerTwoBorder.Stroke = Color.FromArgb("#FF0000");
+					PlayerTwoBorder.StrokeThickness = 4;
+
+					PlayerOneBorder.Stroke = Color.FromArgb("#FFFFFF");
+					PlayerOneBorder.StrokeThickness = 1;
 				}
 
 				if (Game.WinningPlayer() != Game.PlayerEnum.None)
