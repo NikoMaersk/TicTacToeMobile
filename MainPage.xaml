@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TicTacToeMobile.MainPage">
+
+
+    <Grid BackgroundColor="#8793F7">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+        <Grid x:Name="HeaderGrid" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Frame Grid.Row="0" Grid.Column="0" Style="{StaticResource HeaderFrameStyle}">
+                <StackLayout Style="{StaticResource HeaderStackLayoutStyle}">
+                    <Label x:Name="PlayerOneLabel" Text="Player X" Style="{StaticResource HeaderLabelStyle}"/>
+                    <Label x:Name="PlayerOneScoreLabel" Text="{Binding PlayerXScore}"  Style="{StaticResource HeaderLabelStyle}" />
+                </StackLayout>
+            </Frame>
+            <Frame Grid.Row="0" Grid.Column="1" Style="{StaticResource HeaderFrameStyle}">
+                <StackLayout Style="{StaticResource HeaderStackLayoutStyle}">
+                    <Label x:Name="PlayerTwoLabel" Text="Player O" Style="{StaticResource HeaderLabelStyle}" />
+                    <Label x:Name="PlayerTwoScoreLabel" Text="{Binding PlayerYScore}" Style="{StaticResource HeaderLabelStyle}" />
+                </StackLayout>
+            </Frame>
+        </Grid>
+        <Frame Grid.Row="1" CornerRadius="10" BackgroundColor="Transparent" BorderColor="Transparent" HasShadow="False" Margin="5" Padding="1">
+            <Grid x:Name="ButtonGrid" Style="{StaticResource MainGridStyle}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+            </Grid>
+        </Frame>
+        <Button 
+            Grid.Row="2" 
+            Grid.Column="0" 
+            Grid.ColumnSpan="2" 
+            BackgroundColor="#333333" 
+            Margin="50,30,50,50" 
+            BorderWidth="2" 
+            BorderColor="White" 
+            Text="Restart" 
+            TextColor="WhiteSmoke" 
+            FontSize="26" 
+            FontAttributes="Bold"
+            Clicked="OnRestartClicked">
+        </Button>
+    </Grid>
+
+</ContentPage>
